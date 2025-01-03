@@ -1,0 +1,5 @@
+FROM node:23-alpine3.20
+WORKDIR /db
+COPY db.json .
+RUN npm install -g json-server
+CMD ["json-server", "db.json", "--host", "0.0.0.0", "--port", "3000"]

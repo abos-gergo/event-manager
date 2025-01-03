@@ -1,17 +1,15 @@
 services:
   json-server:
-    image: node:23-alpine3.20
-    working_dir: /db
-    volumes:
-      - ./db.json:/db/db.json
-    command: sh -c "npm install -g json-server && json-server db.json --host localhost --port 3000"
+    build:
+      context: .
+      dockerfile: Dockerfile.angular
     ports:
       - "3000:3000"
 
   angular:
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: Dockerfile.angular
     ports:
       - "4200:80"
     depends_on:
