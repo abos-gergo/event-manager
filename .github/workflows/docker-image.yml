@@ -16,7 +16,7 @@ jobs:
           echo "TAG=$(date +%s)" >> $GITHUB_ENV
       - uses: actions/checkout@v4
       - run: |
-          docker build . --file Dockerfile --tag ghcr.io/abos-gergo/event-manager:$IMAGE_TAG --tag ghcr.io/abos-gergo/event-manager:latest
+          docker build . --file Dockerfile --tag ghcr.io/abos-gergo/event-manager:$TAG --tag ghcr.io/abos-gergo/event-manager:latest
           docker login ghcr.io -u abos-gergo -p ${{secrets.GHCR_TOKEN}}
           docker push ghcr.io/abos-gergo/event-manager:$TAG
           docker push ghcr.io/abos-gergo/event-manager:latest
