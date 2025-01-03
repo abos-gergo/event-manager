@@ -2,34 +2,18 @@
   "events": [
     {
       "id": "b1dd",
-      "title": "asd1",
-      "description": "asd",
-      "startDate": "2025-01-07",
-      "startTime": "11:42",
-      "maxParticipants": "10"
+      "title": "Building a new bunker",
+      "description": "We will move out with: \n - 10 DPS \n - 5 Heal \n - 5 Support \n - 5 Tank \n - 5 Scout",
+      "startDate": "2025-01-08",
+      "startTime": "12:00",
+      "maxParticipants": "30"
     },
     {
       "id": "b1cd",
-      "title": "asd6",
-      "description": "asd",
-      "startDate": "2025-01-07",
-      "startTime": "11:42",
-      "maxParticipants": "10"
-    },
-    {
-      "id": "b1gd",
-      "title": "asd3",
-      "description": "asd",
-      "startDate": "2025-01-07",
-      "startTime": "11:42",
-      "maxParticipants": "10"
-    },
-    {
-      "id": "b1dk",
-      "title": "asd4",
-      "description": "asd",
-      "startDate": "2025-01-07",
-      "startTime": "11:42",
+      "title": "Ganking near city",
+      "description": "Max 10 people, all ganking gear specified in guild sheet",
+      "startDate": "2025-01-08",
+      "startTime": "15:20",
       "maxParticipants": "10"
     }
   ]

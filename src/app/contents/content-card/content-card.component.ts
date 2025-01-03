@@ -25,12 +25,10 @@ export class ContentCardComponent {
   constructor(public elementRef: ElementRef<HTMLElement>) {}
 
   public get ParticipantColor(): 'text-red' | 'text-yellow' | 'text-green' {
-    const contentFilledRatio = this.content.maxParticipants / 20;
-
-    if (contentFilledRatio == 1) {
+    if (this.content.maxParticipants > 20) {
       return 'text-red';
     }
-    if (contentFilledRatio >= 0.8) {
+    if (this.content.maxParticipants > 10) {
       return 'text-yellow';
     }
     return 'text-green';
