@@ -1,0 +1,40 @@
+@import "./styles/variables.scss";
+@import "ngx-toastr/toastr";
+@import "./styles/toastr.scss";
+
+body {
+  margin: 15px;
+  overflow-x: hidden;
+  background-color: $gray-3;
+
+  color: $gray-6;
+}
+
+.text-red {
+  color: $red-2;
+}
+.text-yellow {
+  color: $yellow-2;
+}
+.text-green {
+  color: $green-2;
+}
+.text-gray-4 {
+  color: $gray-4;
+}
+
+// Scrollbar
+::-webkit-scrollbar {
+  width: 10px;
+}
+// Scrollbar slider part
+::-webkit-scrollbar-thumb {
+  background-color: $gray-4;
+  border-radius: 1px;
+}
+
+// Scrollbar background
+::-webkit-scrollbar-track {
+  background: $gray-2;
+  border-radius: 1px;
+}

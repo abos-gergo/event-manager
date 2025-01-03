@@ -1,13 +1,19 @@
-import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, ViewContainerRef } from '@angular/core';
+import { ContentsComponent } from './contents/contents.component';
+import { ModalFormService } from './modal-form/modal-form.service';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
+  imports: [ContentsComponent],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'event-manager';
+  constructor(
+    private vcr: ViewContainerRef,
+    private formService: ModalFormService
+  ) {}
+  ngAfterViewInit() {
+    this.formService.setViewContainerRef(this.vcr);
+  }
 }

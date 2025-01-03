@@ -1,0 +1,36 @@
+{
+  "events": [
+    {
+      "id": "b1dd",
+      "title": "asd1",
+      "description": "asd",
+      "startDate": "2025-01-07",
+      "startTime": "11:42",
+      "maxParticipants": "10"
+    },
+    {
+      "id": "b1cd",
+      "title": "asd6",
+      "description": "asd",
+      "startDate": "2025-01-07",
+      "startTime": "11:42",
+      "maxParticipants": "10"
+    },
+    {
+      "id": "b1gd",
+      "title": "asd3",
+      "description": "asd",
+      "startDate": "2025-01-07",
+      "startTime": "11:42",
+      "maxParticipants": "10"
+    },
+    {
+      "id": "b1dk",
+      "title": "asd4",
+      "description": "asd",
+      "startDate": "2025-01-07",
+      "startTime": "11:42",
+      "maxParticipants": "10"
+    }
+  ]
+}

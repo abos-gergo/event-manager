@@ -1,0 +1,80 @@
+@if (content) {
+<div class="card">
+  <div class="top">
+    <div class="left">
+      <h4 id="name">{{ content.title }}</h4>
+      <!-- Hungarian locale is set in app.config.ts -->
+      <h6 id="startDate" class="text-gray-4">
+        {{ content.startDate }} {{ content.startTime }}
+      </h6>
+    </div>
+    @if (selected) {
+    <app-button
+      color="yellow"
+      icon="bi-pencil-square"
+      (click)="onEditClick($event)"
+      class="me-1"
+    ></app-button>
+    <app-button
+      color="red"
+      icon="bi-trash3-fill"
+      (click)="onDeleteClick($event)"
+    ></app-button>
+    }
+  </div>
+
+  @if (selected) {
+  <div class="middle">
+    <div class="left">
+      <p
+        id="description"
+        [innerHTML]="content.description | breakFormatter"
+      ></p>
+    </div>
+    <div class="right">
+      <table id="participant-table">
+        <thead>
+          <tr>
+            <th>Weapon</th>
+            <th>Offhand</th>
+            <th>Helmet</th>
+            <th>Armor</th>
+            <th>Shoes</th>
+            <th>Cape</th>
+            <th>Food</th>
+            <th>Potion</th>
+            <th>Name</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (item of 40 | range; track $index) {
+          <tr>
+            <td>Sword</td>
+            <td>Shield</td>
+            <td>Iron Helmet</td>
+            <td>Plate Armor</td>
+            <td>Leather Boots</td>
+            <td>Red Cape</td>
+            <td>Bread</td>
+            <td>Health Potion</td>
+            <td>John Doe</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+  </div>
+  }
+
+  <div class="bottom">
+    <h6 id="leader" class="text-gray-4">
+      <i class="bi bi-person-workspace"></i> Owner name here
+    </h6>
+    <h6 id="participantCount" [class]="ParticipantColor">
+      {{ content.maxParticipants }}
+      <i class="bi bi-people-fill"></i>
+    </h6>
+  </div>
+  <!-- <p [innerHTML]="content.description | breakFormatter"></p> -->
+</div>
+}

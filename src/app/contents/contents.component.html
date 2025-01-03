@@ -1,0 +1,29 @@
+<div
+  id="facade"
+  (click)="resetSelectedContent()"
+  [class.active]="selectedContentCard"
+></div>
+
+<app-button
+  icon="bi-plus-lg"
+  text="Create new"
+  color="green"
+  (click)="formService.createForm(onCreateSubmit)"
+></app-button>
+
+<div id="content-list" class="mt-5 me-4">
+  <div class="content-row">
+    @for (content of contents; track $index) {
+    <app-content-card
+      #card
+      [content]="content"
+      [selected]="selectedContentCard == card"
+      (click)="setSelectedContent(card)"
+      (closed)="resetSelectedContent()"
+      (delete)="deleteContent(content)"
+      (edit)="formService.createForm(onEditSubmit, content)"
+      [class.selected]="selectedContentCard == card"
+    ></app-content-card>
+    }
+  </div>
+</div>

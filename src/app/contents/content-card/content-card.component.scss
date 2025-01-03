@@ -1,0 +1,76 @@
+@import "./../../../styles/variables.scss";
+
+.card {
+  height: 100%;
+  border-radius: 3px;
+  background-color: $gray-1;
+  border: 0;
+  padding: 15px;
+  color: $gray-6;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+
+  #name {
+    margin: 0;
+  }
+
+  h6 {
+    margin: 0;
+  }
+
+  .top {
+    display: flex;
+    .left {
+      flex-grow: 1;
+    }
+  }
+
+  .middle {
+    margin-top: 2vh;
+    margin-bottom: 2vh;
+    flex-grow: 1;
+    display: flex;
+    gap: 10px;
+    overflow-y: hidden;
+
+    .left {
+      flex: 1;
+      overflow-y: auto;
+    }
+    .right {
+      flex: 2;
+      overflow-y: auto;
+      padding-right: 10px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-top: auto;
+  }
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-radius: 3px;
+  overflow: hidden; /* Ensures rounded corners are applied properly */
+}
+th,
+td {
+  padding: 5px 0;
+  text-align: center;
+}
+th {
+  background-color: $gray-2;
+}
+tr:nth-child(even) {
+  background-color: $gray-3;
+}
+tr:hover {
+  background-color: $gray-4;
+}

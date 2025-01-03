@@ -1,0 +1,60 @@
+@import "./../../styles/variables.scss";
+
+.btn {
+  border-radius: 2px;
+  pointer-events: all;
+
+  &.green {
+    background-color: $green-2;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $green-1;
+    }
+  }
+
+  &.red {
+    background-color: $red-2;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $red-1;
+    }
+  }
+
+  &.red {
+    background-color: $red-2;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $red-1;
+    }
+  }
+
+  &.blue {
+    background-color: $blue-2;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $blue-1;
+    }
+  }
+
+  &.yellow {
+    background-color: $yellow-2;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $yellow-1;
+    }
+  }
+
+  &.gray {
+    background-color: $gray-5;
+    color: $gray-6;
+
+    &:hover {
+      background-color: $gray-4;
+    }
+  }
+}

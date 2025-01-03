@@ -1,0 +1,105 @@
+@import "../../styles/variables.scss";
+
+.facade {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 3;
+
+  background-color: $gray-1;
+  pointer-events: all;
+  opacity: 0.75;
+}
+
+.modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  background-color: $gray-1;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  height: fit-content;
+
+  .top {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    .title {
+      margin-right: 20px;
+    }
+  }
+
+  .middle {
+    .form-row {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      column-gap: 10px;
+    }
+
+    .template {
+      display: none;
+    }
+
+    .form-field {
+      flex-grow: 1;
+    }
+
+    label {
+      color: $gray-6;
+    }
+    input,
+    textarea {
+      width: 100%;
+      margin-bottom: 15px;
+    }
+  }
+
+  .bottom {
+    display: flex;
+    justify-content: end;
+    gap: 10px;
+  }
+}
+
+/* Base styling for input fields */
+input,
+textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 14px;
+  background-color: $gray-2; /* Dark gray background */
+  color: #dcddde; /* Light text color */
+  border: 1px solid $gray-3; /* Slightly darker border */
+  border-radius: 2px; /* Rounded corners */
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  outline: none; /* Remove default outline */
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Focus state for better accessibility */
+input:focus,
+textarea:focus {
+  border-color: $blue-1;
+  box-shadow: 0 0 5px $blue-1;
+}
+
+/* Placeholder styling */
+input::placeholder,
+textarea::placeholder {
+  color: $gray-4; /* Muted gray */
+}
+
+/* Disabled state */
+input:disabled,
+textarea:disabled {
+  background-color: $gray-2;
+  color: $gray-4; /* Muted gray for disabled text */
+  cursor: not-allowed;
+}

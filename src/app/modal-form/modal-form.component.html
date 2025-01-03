@@ -1,0 +1,72 @@
+@if (blockPage) {
+<div class="facade" (click)="close()"></div>
+}
+
+<div
+  class="modal"
+  [style.width]="width"
+  [style.left]="left"
+  [style.height]="height"
+  [style.top]="top"
+>
+  <div class="top">
+    @if (title) {
+    <h3 class="title">{{ title }}</h3>
+    }
+    <app-button color="red" icon="bi-x-lg" (click)="close()"></app-button>
+  </div>
+
+  <div class="middle">
+    @for (formRow of formFields; track $index) { @if (Array.isArray(formRow)) {
+    <div class="form-row">
+      @for (formField of formRow; track $index) {
+      <div
+        [ngTemplateOutlet]="field"
+        [ngTemplateOutletContext]="{ fieldData: formField }"
+        class="template"
+      ></div>
+      }
+    </div>
+    } @else {
+    <div
+      [ngTemplateOutlet]="field"
+      [ngTemplateOutletContext]="{ fieldData: formRow }"
+    ></div>
+    } }
+  </div>
+
+  <div class="bottom">
+    <app-button text="Cancel" color="gray" (click)="close()"></app-button>
+    <app-button
+      type="Submit"
+      text="Submit"
+      color="blue"
+      (click)="submit()"
+    ></app-button>
+  </div>
+</div>
+
+<ng-template #field let-fieldData="fieldData">
+  <div class="form-field" [formGroup]="formGroup">
+    <label [for]="fieldData.name">
+      {{ fieldData.label }}
+      @if (hasRequiredValidator(fieldData.validators || [])) {
+      <span class="text-red"><b>*</b></span>
+      }
+    </label>
+    @if (fieldData.type != "textarea") {
+    <input
+      [formControlName]="fieldData.name"
+      [placeholder]="fieldData.placeholder"
+      [type]="fieldData.type"
+      [value]="fieldData.value"
+    />
+    } @else {
+    <textarea
+      [formControlName]="fieldData.name"
+      [placeholder]="fieldData.placeholder"
+      [value]="fieldData.value"
+    ></textarea>
+    }
+  </div>
+</ng-template>

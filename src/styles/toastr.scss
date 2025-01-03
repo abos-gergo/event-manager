@@ -1,0 +1,41 @@
+@import "./variables.scss";
+
+:root {
+  --bs-toast-spacing: 10px;
+}
+
+.toast-success {
+  background-color: $green-2;
+  &:hover {
+    background-color: $green-1;
+  }
+}
+
+.toast-error {
+  background-color: $red-2;
+  &:hover {
+    background-color: $red-1;
+  }
+}
+
+.toast-warning {
+  background-color: $yellow-2;
+  &:hover {
+    background-color: $yellow-1;
+  }
+}
+
+.own-toastr {
+  position: relative;
+  overflow: hidden;
+  pointer-events: all;
+  margin: 0 0 6px;
+  padding: 15px 15px 15px 50px;
+  width: 300px;
+  border-radius: 2px;
+  background-position: 15px center;
+  background-repeat: no-repeat;
+  background-size: 24px;
+  color: $gray-6;
+  transition: 0.1s;
+}

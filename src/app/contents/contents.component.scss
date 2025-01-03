@@ -1,0 +1,46 @@
+@import "../../styles/variables.scss";
+
+#facade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 1;
+
+  background-color: $gray-1;
+  opacity: 0;
+  pointer-events: none;
+
+  transition: 0.1s ease;
+
+  &.active {
+    pointer-events: all;
+    opacity: 0.75;
+  }
+}
+
+.content-row {
+  display: flex; /* Enable Flexbox */
+  flex-wrap: wrap; /* Allow wrapping to the next row */
+  gap: 12px; /* Space between items */
+  justify-content: flex-start; /* Align items to the start */
+}
+
+app-content-card {
+  /* Distribute space for 5 items in a row */
+  // width: calc((100% - 4 * 12px) / 5);
+  width: 350px;
+  height: 15vh;
+
+  transition: 0.1s ease;
+
+  cursor: pointer;
+  &.selected {
+    cursor: default;
+  }
+}
+
+app-content-card:not(.selected):hover {
+  transform: scale(1.02);
+}
