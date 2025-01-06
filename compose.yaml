@@ -2,7 +2,7 @@ services:
   json-server:
     build:
       context: .
-      dockerfile: Dockerfile.angular
+      dockerfile: Dockerfile.json-server
     ports:
       - "3000:3000"
 
